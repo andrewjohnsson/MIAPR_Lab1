@@ -14,6 +14,7 @@
 		661E08E51C60E43C005BD3B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 661E08E31C60E43C005BD3B9 /* LaunchScreen.storyboard */; };
 		661E08F01C60E43C005BD3B9 /* recognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661E08EF1C60E43C005BD3B9 /* recognizerTests.swift */; };
 		661E08FB1C60E43D005BD3B9 /* recognizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661E08FA1C60E43D005BD3B9 /* recognizerUITests.swift */; };
+		66C52ADE1C60EEBE000C4631 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C52ADD1C60EEBE000C4631 /* OptionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		661E08F61C60E43D005BD3B9 /* recognizerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = recognizerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		661E08FA1C60E43D005BD3B9 /* recognizerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recognizerUITests.swift; sourceTree = "<group>"; };
 		661E08FC1C60E43D005BD3B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66C52ADD1C60EEBE000C4631 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				661E08DA1C60E43C005BD3B9 /* AppDelegate.swift */,
 				661E08DC1C60E43C005BD3B9 /* ViewController.swift */,
+				66C52ADD1C60EEBE000C4631 /* OptionsViewController.swift */,
 				661E08DE1C60E43C005BD3B9 /* Main.storyboard */,
 				661E08E11C60E43C005BD3B9 /* Assets.xcassets */,
 				661E08E31C60E43C005BD3B9 /* LaunchScreen.storyboard */,
@@ -193,6 +196,7 @@
 				TargetAttributes = {
 					661E08D61C60E43C005BD3B9 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = X3G668Z26A;
 					};
 					661E08EA1C60E43C005BD3B9 = {
 						CreatedOnToolsVersion = 7.3;
@@ -256,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66C52ADE1C60EEBE000C4631 /* OptionsViewController.swift in Sources */,
 				661E08DD1C60E43C005BD3B9 /* ViewController.swift in Sources */,
 				661E08DB1C60E43C005BD3B9 /* AppDelegate.swift in Sources */,
 			);
@@ -399,6 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = recognizer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gingercode.recognizer;
@@ -410,6 +416,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = recognizer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gingercode.recognizer;
@@ -482,6 +489,7 @@
 				661E09011C60E43D005BD3B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		661E09021C60E43D005BD3B9 /* Build configuration list for PBXNativeTarget "recognizerTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +498,7 @@
 				661E09041C60E43D005BD3B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		661E09051C60E43D005BD3B9 /* Build configuration list for PBXNativeTarget "recognizerUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +507,7 @@
 				661E09071C60E43D005BD3B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
