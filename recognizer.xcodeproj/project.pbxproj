@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		661CDB461C6BDD5E00698E64 /* DistanceCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661CDB451C6BDD5E00698E64 /* DistanceCalc.swift */; };
 		661CDB4E1C6BE04400698E64 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661CDB4D1C6BE04400698E64 /* Protocols.swift */; };
 		661CDB501C6BF0C400698E64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 661CDB4F1C6BF0C400698E64 /* Main.storyboard */; };
 		661CDB521C6C7AAD00698E64 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661CDB511C6C7AAD00698E64 /* Log.swift */; };
@@ -17,6 +16,10 @@
 		661E08E51C60E43C005BD3B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 661E08E31C60E43C005BD3B9 /* LaunchScreen.storyboard */; };
 		661E08F01C60E43C005BD3B9 /* recognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661E08EF1C60E43C005BD3B9 /* recognizerTests.swift */; };
 		661E08FB1C60E43D005BD3B9 /* recognizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661E08FA1C60E43D005BD3B9 /* recognizerUITests.swift */; };
+		6629665C1C6FB89100E92771 /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6629665B1C6FB89100E92771 /* Drawer.swift */; };
+		6629665E1C6FB96B00E92771 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6629665D1C6FB96B00E92771 /* Point.swift */; };
+		662966601C6FB98400E92771 /* ClassPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6629665F1C6FB98400E92771 /* ClassPoint.swift */; };
+		662966621C6FBA4100E92771 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662966611C6FBA4100E92771 /* Controller.swift */; };
 		6680B2841C63585000C0A43E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6680B2831C63585000C0A43E /* CoreGraphics.framework */; };
 		66C52ADE1C60EEBE000C4631 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C52ADD1C60EEBE000C4631 /* OptionsViewController.swift */; };
 		66EFAD2E1C63735600BB20AC /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EFAD2D1C63735600BB20AC /* LogViewController.swift */; };
@@ -40,7 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		661CDB451C6BDD5E00698E64 /* DistanceCalc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceCalc.swift; sourceTree = "<group>"; };
 		661CDB4D1C6BE04400698E64 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		661CDB4F1C6BF0C400698E64 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		661CDB511C6C7AAD00698E64 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
@@ -56,6 +58,10 @@
 		661E08F61C60E43D005BD3B9 /* recognizerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = recognizerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		661E08FA1C60E43D005BD3B9 /* recognizerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recognizerUITests.swift; sourceTree = "<group>"; };
 		661E08FC1C60E43D005BD3B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6629665B1C6FB89100E92771 /* Drawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
+		6629665D1C6FB96B00E92771 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		6629665F1C6FB98400E92771 /* ClassPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassPoint.swift; sourceTree = "<group>"; };
+		662966611C6FBA4100E92771 /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		6680B2831C63585000C0A43E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		66C52ADD1C60EEBE000C4631 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		66EFAD2D1C63735600BB20AC /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
@@ -114,11 +120,14 @@
 				661E08DA1C60E43C005BD3B9 /* AppDelegate.swift */,
 				661E08DC1C60E43C005BD3B9 /* ViewController.swift */,
 				661CDB511C6C7AAD00698E64 /* Log.swift */,
+				661CDB4D1C6BE04400698E64 /* Protocols.swift */,
+				6629665D1C6FB96B00E92771 /* Point.swift */,
+				6629665F1C6FB98400E92771 /* ClassPoint.swift */,
+				662966611C6FBA4100E92771 /* Controller.swift */,
+				6629665B1C6FB89100E92771 /* Drawer.swift */,
 				66EFAD2D1C63735600BB20AC /* LogViewController.swift */,
 				66C52ADD1C60EEBE000C4631 /* OptionsViewController.swift */,
 				661CDB4F1C6BF0C400698E64 /* Main.storyboard */,
-				661CDB451C6BDD5E00698E64 /* DistanceCalc.swift */,
-				661CDB4D1C6BE04400698E64 /* Protocols.swift */,
 				661E08E11C60E43C005BD3B9 /* Assets.xcassets */,
 				661E08E31C60E43C005BD3B9 /* LaunchScreen.storyboard */,
 				661E08E61C60E43C005BD3B9 /* Info.plist */,
@@ -276,13 +285,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6629665E1C6FB96B00E92771 /* Point.swift in Sources */,
 				66C52ADE1C60EEBE000C4631 /* OptionsViewController.swift in Sources */,
 				661CDB521C6C7AAD00698E64 /* Log.swift in Sources */,
 				661E08DD1C60E43C005BD3B9 /* ViewController.swift in Sources */,
+				662966601C6FB98400E92771 /* ClassPoint.swift in Sources */,
+				662966621C6FBA4100E92771 /* Controller.swift in Sources */,
 				661CDB4E1C6BE04400698E64 /* Protocols.swift in Sources */,
-				661CDB461C6BDD5E00698E64 /* DistanceCalc.swift in Sources */,
 				661E08DB1C60E43C005BD3B9 /* AppDelegate.swift in Sources */,
 				66EFAD2E1C63735600BB20AC /* LogViewController.swift in Sources */,
+				6629665C1C6FB89100E92771 /* Drawer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

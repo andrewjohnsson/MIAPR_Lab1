@@ -27,7 +27,7 @@ class OptionsPopoverController: UITableViewController{
             classAmount = 1
         }
         
-        delegate?.generatePoints(pointsAmount!, classes: classAmount!)
+        delegate?.generate(pointsAmount!, classes: classAmount!)
         dismissViewControllerAnimated(true, completion: nil)
     }
     

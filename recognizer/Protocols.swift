@@ -9,13 +9,9 @@
 import UIKit
 
 protocol GeneratorDelegate: class{
-    func generatePoints(points:Int, classes:Int)
+    func generate(points:Int, classes:Int)
 }
 
 protocol LoggerDelegate: class{
     func logPoint(x:CGFloat, y: CGFloat)
-}
-
-protocol DistanceDelegate: class{
-    func calcDistance(x:CGFloat, y: CGFloat)
 }
