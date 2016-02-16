@@ -12,6 +12,10 @@ class ClassPoint: Point{
     var points: [Point] = []
     private var color: CGColor = UIColor.whiteColor().CGColor
     
+    func addPoint(pt: Point){
+        self.points.append(pt)
+    }
+    
     func getColor() -> CGColor{
         return self.color
     }
@@ -19,7 +23,7 @@ class ClassPoint: Point{
     override init() {
         super.init()
         self.color = UIColor(hue: CGFloat(arc4random() % 256) / 256,
-                            saturation: CGFloat(arc4random() % 128) / 256 + 0.5,
+                            saturation: CGFloat(arc4random() % 64) / 256 + 0.5,
                             brightness: CGFloat(arc4random() % 128) / 256 + 0.5,
                             alpha: 1).CGColor
     }

@@ -11,47 +11,29 @@ import UIKit
 class Drawer{
     let vc: ViewController
     unowned var controller: Controller
-    //var classQueue = dispatch_queue_create("by.andrewjohnsson.drawer.classes", DISPATCH_QUEUE_CONCURRENT)
-    //var pointQueue = dispatch_queue_create("by.andrewjohnsson.drawer.points", DISPATCH_QUEUE_CONCURRENT)
     
     func drawPoints(entity: [ClassPoint]){
+        UIGraphicsBeginImageContext(self.vc.canvas.bounds.size)
+        let context = UIGraphicsGetCurrentContext()
+        self.vc.canvas.image?.drawInRect(CGRectMake(self.vc.canvas.frame.origin.x, self.vc.canvas.frame.origin.y, self.vc.canvas.frame.width, self.vc.canvas.frame.height))
         for cl in 0...entity.count-1
         {
-            var drawerQueue = dispatch_queue_create("by.andrewjohnsson.drawer", DISPATCH_QUEUE_CONCURRENT)
-            dispatch_barrier_async(drawerQueue, {
-                dispatch_sync(dispatch_get_main_queue(), {
-                    let classDot = CAShapeLayer()
-                    let path = UIBezierPath.init(ovalInRect: CGRectMake(0.0, 0.0, 2.0, 2.0))
-                    classDot.path = path.CGPath
-                    classDot.strokeColor = entity[cl].getColor()
-                    classDot.lineWidth = 2
-                    classDot.bounds = CGRectMake(0.0, 0.0, 0.0, 0.0)
-                    classDot.position = CGPointMake(entity[cl].coordinate.x, entity[cl].coordinate.y)
-                    self.vc.canvas.layer.addSublayer(classDot)
-                    
-                    for point in 0...entity[cl].points.count-1{
-                        let dot = CAShapeLayer()
-                        let path = UIBezierPath.init(ovalInRect: CGRectMake(0.0, 0.0, 0.5, 0.5))
-                        dot.path = path.CGPath
-                        dot.strokeColor = entity[cl].getColor()
-                        dot.lineWidth = 0.5
-                        dot.bounds = CGRectMake(0.0, 0.0, 0.0, 0.0)
-                        dot.position = CGPointMake(entity[cl].points[point].coordinate.x,entity[cl].points[point].coordinate.y)
-                        self.vc.canvas.layer.addSublayer(dot)
-                    }
-                    self.rasterize()
-                })
-            })
-            drawerQueue = nil
+            CGContextSetFillColorWithColor(context, entity[cl].getColor())
+            CGContextFillEllipseInRect(context,
+                CGRectMake(CGFloat(entity[cl].coordinate.x),
+                CGFloat(entity[cl].coordinate.y),
+            5, 5))
+            for point in 0...entity[cl].points.count-1{
+                let context = UIGraphicsGetCurrentContext()
+                CGContextSetFillColorWithColor(context, entity[cl].getColor())
+                CGContextFillEllipseInRect(context, CGRectMake(
+                    CGFloat(entity[cl].points[point].coordinate.x),
+                    CGFloat(entity[cl].points[point].coordinate.y),
+                    2, 2))
+            }
         }
-    }
-    
-    func rasterize(){
-        self.vc.canvas.layer.shouldRasterize = true
-    }
-    
-    func deleteLayers(){
-        self.vc.canvas.layer.sublayers = nil
+        self.vc.canvas.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
     }
     
     init(vc: ViewController, controller: Controller){

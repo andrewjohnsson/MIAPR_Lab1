@@ -9,20 +9,10 @@
 import UIKit
 
 class Point{
-    var coordinate: (x: CGFloat, y: CGFloat)
-    weak var ownClass: ClassPoint?
-    //var color: CGColor = UIColor.whiteColor().CGColor
-    
-    func setClass(cl: ClassPoint){
-        self.ownClass = cl
-    }
-    
-    func getClass() -> ClassPoint{
-        return self.ownClass!
-    }
+    var coordinate: (x: UInt16, y: UInt16)
     
     init(){
-        self.coordinate.x = CGFloat(arc4random() % 500)
-        self.coordinate.y = CGFloat(arc4random() % 500)
+        self.coordinate.x = UInt16(arc4random() % UInt32(UIScreen.mainScreen().bounds.size.width))
+        self.coordinate.y = UInt16(arc4random() % UInt32(UIScreen.mainScreen().bounds.size.height-80))
     }
 }
