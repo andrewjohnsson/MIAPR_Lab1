@@ -9,40 +9,56 @@
 import UIKit
 
 class Controller{
-    unowned var vc: ViewController
     var drawer: Drawer?
-    var pointsEntity: [Point] = []
     var classesEntity: [ClassPoint] = []
+    
+    var generatorQueue = dispatch_queue_create("by.andrewjohnsson.generator", DISPATCH_QUEUE_CONCURRENT)
     
     func initDrawer(vc: ViewController){
         self.drawer = Drawer(vc: vc, controller: self)
     }
     
-    func generateCoord() -> (CGFloat,CGFloat){
-        return (CGFloat(arc4random() % UInt32(self.vc.canvas.bounds.size.width)), CGFloat(arc4random() % UInt32(self.vc.canvas.bounds.size.height)))
+    func generate(amount: (Int,Int)){
+        self.drawer!.deleteLayers()
+        self.process(amount)
+        self.drawer!.drawPoints(classesEntity)
+        //self.drawer!.rasterize()
     }
     
-    func generatePoints(points:Int, classes:Int){
-        for _ in 0...classes-1{
-            let clPoint = ClassPoint(coord: self.generateCoord())
-            drawer!.generateColor(clPoint)
-            drawer!.drawClass(clPoint)
-            classesEntity.append(clPoint)
-        }
-        
-        for _ in 0...points-1{
-            let point = Point(coord: self.generateCoord())
-            point.setClass(classesEntity)
-            drawer!.drawPoint(point)
-        }
+    func addClass(cl: ClassPoint) -> ClassPoint{
+        self.classesEntity.append(cl)
+        return cl
     }
     
-    init(vc: ViewController){
-        self.vc = vc
+    func setClass(point: Point){
+        var distance = CGFloat.max
+        var bestClass: ClassPoint?
+        for cl in 0...classesEntity.count-1{
+            let curDist: CGFloat = hypot(point.coordinate.x - classesEntity[cl].coordinate.x,
+                                        point.coordinate.y - classesEntity[cl].coordinate.y)
+            if (curDist < distance){
+                bestClass = classesEntity[cl]
+                distance = curDist
+            }
+        }
+        bestClass?.points.append(point)
+        point.setClass(bestClass!)
+    }
+    
+    func process(amount: (Int,Int)){
+        for _ in 0...amount.0-1{
+            dispatch_barrier_async(self.generatorQueue, {
+                self.addClass(ClassPoint())
+            })
+        }
+        for _ in 0...amount.1-1{
+            dispatch_barrier_async(self.generatorQueue, {
+                self.setClass(Point())
+            })
+        }
     }
     
     deinit{
-        self.pointsEntity = []
         self.classesEntity = []
     }
 }

@@ -8,36 +8,57 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPopoverPresentationControllerDelegate, GeneratorDelegate{
+class ViewController: UIViewController, UIPopoverPresentationControllerDelegate{
     @IBOutlet weak var canvas: UIImageView!
+    @IBOutlet weak var switchControl: UISegmentedControl!
+    @IBOutlet weak var pointsNumber: UITextField!
+    @IBOutlet weak var classesNumber: UITextField!
+    @IBOutlet weak var logView: UIView!
+    @IBOutlet weak var generateBtn: UIBarButtonItem!
     
     weak var delegate: LoggerDelegate?
     
-    @IBAction func showOptions(sender: AnyObject) {
-        performSegueWithIdentifier("toggleOptions", sender: self)
-    }
-    
-    @IBAction func clear(sender: AnyObject) {
-        canvas.layer.sublayers = nil
-    }
-    
-    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
-        return .None
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toggleOptions"{
-            let optionsPopover:OptionsPopoverController = segue.destinationViewController as! OptionsPopoverController
-            optionsPopover.modalPresentationStyle = UIModalPresentationStyle.Popover
-            optionsPopover.popoverPresentationController!.delegate = self
-            optionsPopover.delegate = self
+    @IBAction func changeView(sender: AnyObject) {
+        switch (switchControl.selectedSegmentIndex){
+        case 0:
+            logView.hidden = true
+            canvas.hidden = false
+            pointsNumber.hidden = false
+            classesNumber.hidden = false
+            generateBtn.enabled = true
+            break
+        case 1:
+            canvas.hidden = true
+            logView.hidden = false
+            pointsNumber.hidden = true
+            classesNumber.hidden = true
+            generateBtn.enabled = false
+            break
+        default:
+            break
         }
     }
     
-    func generate(points: Int, classes: Int) {
-        let generator = Controller(vc: self)
+    @IBAction func clear(sender: AnyObject) {
+        view.endEditing(true)
+        pointsNumber.text = ""
+        classesNumber.text = ""
+        canvas.layer.sublayers = nil
+    }
+    
+    @IBAction func hideKeyboard(sender: AnyObject) {
+        view.endEditing(true)
+    }
+    
+    @IBAction func generate(sender: AnyObject) {
+        view.endEditing(true)
+        guard let amount:(Int,Int) = (Int(classesNumber.text!)!, Int(pointsNumber.text!)!) else{
+            return
+        }
+        
+        let generator = Controller()
         generator.initDrawer(self)
-        generator.generatePoints(points, classes: classes)
+        generator.generate(amount)
     }
     
     override func viewDidLoad() {

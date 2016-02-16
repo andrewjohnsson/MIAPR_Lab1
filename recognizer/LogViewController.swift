@@ -21,8 +21,6 @@ class LogViewController: UIViewController, LoggerDelegate{
     }
     
     override func viewDidLoad() {
-        let vc = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)!-2] as! ViewController
-        vc.delegate = self
         super.viewDidLoad()
     }
     

@@ -21,7 +21,6 @@
 		662966601C6FB98400E92771 /* ClassPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6629665F1C6FB98400E92771 /* ClassPoint.swift */; };
 		662966621C6FBA4100E92771 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662966611C6FBA4100E92771 /* Controller.swift */; };
 		6680B2841C63585000C0A43E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6680B2831C63585000C0A43E /* CoreGraphics.framework */; };
-		66C52ADE1C60EEBE000C4631 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C52ADD1C60EEBE000C4631 /* OptionsViewController.swift */; };
 		66EFAD2E1C63735600BB20AC /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EFAD2D1C63735600BB20AC /* LogViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,7 +62,6 @@
 		6629665F1C6FB98400E92771 /* ClassPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassPoint.swift; sourceTree = "<group>"; };
 		662966611C6FBA4100E92771 /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		6680B2831C63585000C0A43E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		66C52ADD1C60EEBE000C4631 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		66EFAD2D1C63735600BB20AC /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,14 +117,13 @@
 			children = (
 				661E08DA1C60E43C005BD3B9 /* AppDelegate.swift */,
 				661E08DC1C60E43C005BD3B9 /* ViewController.swift */,
+				66EFAD2D1C63735600BB20AC /* LogViewController.swift */,
 				661CDB511C6C7AAD00698E64 /* Log.swift */,
 				661CDB4D1C6BE04400698E64 /* Protocols.swift */,
 				6629665D1C6FB96B00E92771 /* Point.swift */,
 				6629665F1C6FB98400E92771 /* ClassPoint.swift */,
 				662966611C6FBA4100E92771 /* Controller.swift */,
 				6629665B1C6FB89100E92771 /* Drawer.swift */,
-				66EFAD2D1C63735600BB20AC /* LogViewController.swift */,
-				66C52ADD1C60EEBE000C4631 /* OptionsViewController.swift */,
 				661CDB4F1C6BF0C400698E64 /* Main.storyboard */,
 				661E08E11C60E43C005BD3B9 /* Assets.xcassets */,
 				661E08E31C60E43C005BD3B9 /* LaunchScreen.storyboard */,
@@ -286,7 +283,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6629665E1C6FB96B00E92771 /* Point.swift in Sources */,
-				66C52ADE1C60EEBE000C4631 /* OptionsViewController.swift in Sources */,
 				661CDB521C6C7AAD00698E64 /* Log.swift in Sources */,
 				661E08DD1C60E43C005BD3B9 /* ViewController.swift in Sources */,
 				662966601C6FB98400E92771 /* ClassPoint.swift in Sources */,

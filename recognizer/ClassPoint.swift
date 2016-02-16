@@ -9,25 +9,18 @@
 import UIKit
 
 class ClassPoint: Point{
-    var ownPoints: [Point] = []
-    var color: CGColor?
-    
-    func getOwnPoints() -> [Point]{
-        return self.ownPoints
-    }
+    var points: [Point] = []
+    private var color: CGColor = UIColor.whiteColor().CGColor
     
     func getColor() -> CGColor{
-        guard self.color == nil else{
-            return self.color!
-        }
-        return UIColor.whiteColor().CGColor
+        return self.color
     }
     
-    func setColor(color: CGColor){
-        self.color = color
-    }
-    
-    func resetOwnPoints(){
-        self.ownPoints = []
+    override init() {
+        super.init()
+        self.color = UIColor(hue: CGFloat(arc4random() % 256) / 256,
+                            saturation: CGFloat(arc4random() % 128) / 256 + 0.5,
+                            brightness: CGFloat(arc4random() % 128) / 256 + 0.5,
+                            alpha: 1).CGColor
     }
 }
