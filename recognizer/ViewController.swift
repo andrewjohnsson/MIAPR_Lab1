@@ -16,8 +16,6 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate{
     @IBOutlet weak var logView: UIView!
     @IBOutlet weak var generateBtn: UIBarButtonItem!
     
-    weak var delegate: LoggerDelegate?
-    
     @IBAction func changeView(sender: AnyObject) {
         switch (switchControl.selectedSegmentIndex){
         case 0:
@@ -43,7 +41,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate{
         view.endEditing(true)
         pointsNumber.text = ""
         classesNumber.text = ""
-        canvas.layer.sublayers = nil
+        canvas.image = nil
     }
     
     @IBAction func hideKeyboard(sender: AnyObject) {
@@ -58,7 +56,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate{
         
         let generator = Controller()
         generator.initDrawer(self)
-        generator.generate(amount)
+        generator.process(amount)
     }
     
     override func viewDidLoad() {

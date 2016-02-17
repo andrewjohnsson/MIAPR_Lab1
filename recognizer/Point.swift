@@ -13,6 +13,6 @@ class Point{
     
     init(){
         self.coordinate.x = UInt16(arc4random() % UInt32(UIScreen.mainScreen().bounds.size.width))
-        self.coordinate.y = UInt16(arc4random() % UInt32(UIScreen.mainScreen().bounds.size.height-80))
+        self.coordinate.y = UInt16(arc4random() % UInt32(UIScreen.mainScreen().bounds.size.height-65))
     }
 }

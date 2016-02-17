@@ -22,14 +22,14 @@ class Drawer{
             CGContextFillEllipseInRect(context,
                 CGRectMake(CGFloat(entity[cl].coordinate.x),
                 CGFloat(entity[cl].coordinate.y),
-            5, 5))
+            10, 10))
             for point in 0...entity[cl].points.count-1{
                 let context = UIGraphicsGetCurrentContext()
                 CGContextSetFillColorWithColor(context, entity[cl].getColor())
                 CGContextFillEllipseInRect(context, CGRectMake(
                     CGFloat(entity[cl].points[point].coordinate.x),
                     CGFloat(entity[cl].points[point].coordinate.y),
-                    2, 2))
+                    1, 1))
             }
         }
         self.vc.canvas.image = UIGraphicsGetImageFromCurrentImageContext()

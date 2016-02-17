@@ -9,13 +9,9 @@
 import Foundation
 import UIKit
 
-class LogViewController: UIViewController, LoggerDelegate{
+class LogViewController: UIViewController{
     @IBOutlet weak var pointsLog: UITextView!
-    
-    func logPoint(x:CGFloat, y: CGFloat){
-        pointsLog.text.appendContentsOf("\n" + String(NSDate()) + "    Point(" + String(x) + ", " + String(y) + ")")
-    }
-    
+
     @IBAction func clear(sender: AnyObject) {
         pointsLog.text! = ""
     }
