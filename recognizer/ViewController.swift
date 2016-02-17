@@ -9,33 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController, UIPopoverPresentationControllerDelegate{
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var canvas: UIImageView!
-    @IBOutlet weak var switchControl: UISegmentedControl!
     @IBOutlet weak var pointsNumber: UITextField!
     @IBOutlet weak var classesNumber: UITextField!
-    @IBOutlet weak var logView: UIView!
     @IBOutlet weak var generateBtn: UIBarButtonItem!
-    
-    @IBAction func changeView(sender: AnyObject) {
-        switch (switchControl.selectedSegmentIndex){
-        case 0:
-            logView.hidden = true
-            canvas.hidden = false
-            pointsNumber.hidden = false
-            classesNumber.hidden = false
-            generateBtn.enabled = true
-            break
-        case 1:
-            canvas.hidden = true
-            logView.hidden = false
-            pointsNumber.hidden = true
-            classesNumber.hidden = true
-            generateBtn.enabled = false
-            break
-        default:
-            break
-        }
-    }
     
     @IBAction func clear(sender: AnyObject) {
         view.endEditing(true)
@@ -53,8 +32,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate{
         guard let amount:(Int,Int) = (Int(classesNumber.text!)!, Int(pointsNumber.text!)!) else{
             return
         }
-        
-        let generator = Controller()
+        let generator = Controller(vc: self)
         generator.initDrawer(self)
         generator.process(amount)
     }

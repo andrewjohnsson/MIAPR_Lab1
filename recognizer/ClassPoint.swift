@@ -10,14 +10,23 @@ import UIKit
 
 class ClassPoint: Point{
     var points: [Point] = []
+    var wasMoved = false
+    
     private var color: CGColor = UIColor.whiteColor().CGColor
     
     func addPoint(pt: Point){
         self.points.append(pt)
+        pt.setClass(self)
     }
     
     func getColor() -> CGColor{
         return self.color
+    }
+    
+    func setCoord(coord: (UInt16, UInt16)){
+        self.coordinate.x = coord.0
+        self.coordinate.y = coord.1
+        self.wasMoved = true
     }
     
     override init() {

@@ -10,6 +10,11 @@ import UIKit
 
 class Point{
     var coordinate: (x: UInt16, y: UInt16)
+    var ownClass: ClassPoint?
+    
+    func setClass(cl: ClassPoint){
+        self.ownClass = cl
+    }
     
     init(){
         self.coordinate.x = UInt16(arc4random() % UInt32(UIScreen.mainScreen().bounds.size.width))

@@ -30,8 +30,10 @@ class Drawer{
                     CGFloat(entity[cl].points[point].coordinate.x),
                     CGFloat(entity[cl].points[point].coordinate.y),
                     1, 1))
+                self.vc.progressBar.progress = 0.5 + Float(entity.count/entity[cl].points.count)
             }
         }
+        self.vc.indicator.stopAnimating()
         self.vc.canvas.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
     }

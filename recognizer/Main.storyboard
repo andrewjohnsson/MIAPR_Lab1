@@ -35,62 +35,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4q-tV-aUG">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <connections>
-                                    <segue destination="wyI-T7-mZz" kind="embed" id="gfb-3v-VNR"/>
-                                </connections>
-                            </containerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tDx-zD-X5R">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="zSn-l3-qeL" appends="YES" id="0w1-Tl-vkX"/>
+                                </connections>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qcX-No-QrP">
+                                <rect key="frame" x="282" y="250" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YFf-H8-DRB">
+                                <rect key="frame" x="0.0" y="64" width="600" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="tDx-zD-X5R" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="5aP-LI-J6v"/>
+                            <constraint firstItem="qcX-No-QrP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Qa-Rf-mwv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tDx-zD-X5R" secondAttribute="trailing" constant="-20" id="9Vc-EK-EA6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tDx-zD-X5R" secondAttribute="bottom" id="OCv-Wt-xG0"/>
-                            <constraint firstAttribute="bottom" secondItem="l4q-tV-aUG" secondAttribute="bottom" id="SEe-Xj-owX"/>
+                            <constraint firstItem="YFf-H8-DRB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XpY-kk-Zmf"/>
                             <constraint firstItem="tDx-zD-X5R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Ysh-5S-RHc"/>
-                            <constraint firstAttribute="trailing" secondItem="l4q-tV-aUG" secondAttribute="trailing" id="bxc-j3-ipQ"/>
-                            <constraint firstItem="l4q-tV-aUG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oK6-v8-mPE"/>
-                            <constraint firstItem="l4q-tV-aUG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="spW-TR-Ezp"/>
+                            <constraint firstItem="qcX-No-QrP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-31.5" id="bL7-9d-pri"/>
+                            <constraint firstItem="YFf-H8-DRB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dxW-nI-dbD"/>
+                            <constraint firstAttribute="trailing" secondItem="YFf-H8-DRB" secondAttribute="trailing" id="sAI-DP-j7j"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wMx-2J-EET">
                         <nil key="title"/>
-                        <leftBarButtonItems>
-                            <barButtonItem id="lr2-VJ-zdS">
-                                <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Points" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="MWt-e6-Upu">
-                                    <rect key="frame" x="20" y="7" width="80" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
-                                </textField>
-                            </barButtonItem>
-                            <barButtonItem id="vH4-Ed-g65">
-                                <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Classes" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="ihN-nT-FtD">
-                                    <rect key="frame" x="108" y="7" width="80" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
-                                </textField>
-                            </barButtonItem>
-                        </leftBarButtonItems>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Ynx-ps-y2c">
-                            <rect key="frame" x="251" y="7" width="99" height="30"/>
+                        <barButtonItem key="leftBarButtonItem" id="lr2-VJ-zdS">
+                            <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Points" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="MWt-e6-Upu">
+                                <rect key="frame" x="20" y="7" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                            </textField>
+                        </barButtonItem>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Classes" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="Bly-tp-cSr">
+                            <rect key="frame" x="250" y="7" width="100" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="Pic"/>
-                                <segment title="Log"/>
-                            </segments>
-                            <connections>
-                                <action selector="changeView:" destination="BYZ-38-t0r" eventType="valueChanged" id="y3M-te-Pcw"/>
-                            </connections>
-                        </segmentedControl>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                        </textField>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="play" id="yNf-aP-ajp">
                                 <connections>
@@ -106,61 +95,22 @@
                     </navigationItem>
                     <connections>
                         <outlet property="canvas" destination="tDx-zD-X5R" id="BSb-e5-GSZ"/>
-                        <outlet property="classesNumber" destination="ihN-nT-FtD" id="Gtq-KQ-PaG"/>
+                        <outlet property="classesNumber" destination="Bly-tp-cSr" id="47F-8R-gic"/>
                         <outlet property="generateBtn" destination="yNf-aP-ajp" id="lCH-eI-MzW"/>
-                        <outlet property="logView" destination="l4q-tV-aUG" id="cCD-ej-xtV"/>
+                        <outlet property="indicator" destination="qcX-No-QrP" id="mc6-pp-JhV"/>
                         <outlet property="pointsNumber" destination="MWt-e6-Upu" id="d2a-pp-Ex2"/>
-                        <outlet property="switchControl" destination="Ynx-ps-y2c" id="LWg-vW-SZr"/>
+                        <outlet property="progressBar" destination="YFf-H8-DRB" id="eVo-8r-Ynl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="zSn-l3-qeL">
+                    <connections>
+                        <action selector="hideKeyboard:" destination="BYZ-38-t0r" id="iGs-4B-SNI"/>
+                        <outlet property="delegate" destination="tDx-zD-X5R" id="3hh-OS-MuU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1232" y="425"/>
-        </scene>
-        <!--Log-->
-        <scene sceneID="Lx4-Jo-fbd">
-            <objects>
-                <viewController id="wyI-T7-mZz" customClass="LogViewController" customModule="recognizer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lFp-Mi-Ske"/>
-                        <viewControllerLayoutGuide type="bottom" id="8F8-Op-qG0"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sKE-Aa-4WJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJk-gC-Fuw">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outlet property="delegate" destination="sKE-Aa-4WJ" id="wki-vJ-sgb"/>
-                                </connections>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="aJk-gC-Fuw" secondAttribute="bottom" id="HkZ-de-URY"/>
-                            <constraint firstItem="aJk-gC-Fuw" firstAttribute="leading" secondItem="sKE-Aa-4WJ" secondAttribute="leading" id="RVP-xk-ObX"/>
-                            <constraint firstAttribute="trailing" secondItem="aJk-gC-Fuw" secondAttribute="trailing" id="Rn8-uU-iGF"/>
-                            <constraint firstItem="aJk-gC-Fuw" firstAttribute="top" secondItem="sKE-Aa-4WJ" secondAttribute="top" id="T60-vP-e3Q"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Log" id="vMO-ZB-zHP">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="MF0-i6-TGz">
-                            <connections>
-                                <action selector="clear:" destination="wyI-T7-mZz" id="M0D-Nx-0Af"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="pointsLog" destination="aJk-gC-Fuw" id="45D-wA-nbm"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SJk-Ld-hqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1947" y="425"/>
         </scene>
     </scenes>
 </document>
